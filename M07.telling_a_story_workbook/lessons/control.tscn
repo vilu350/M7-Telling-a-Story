@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dasjbp4rq3n7f"]
+[gd_scene load_steps=4 format=3 uid="uid://dasjbp4rq3n7f"]
 
-[ext_resource type="Texture2D" uid="uid://ogu21ixgdm50" path="res://assets/test.svg" id="1_y1dcc"]
+[ext_resource type="Shader" uid="uid://cs15e2hgd2lan" path="res://assets/sliding_background.gdshader" id="1_3mkmv"]
+[ext_resource type="Texture2D" uid="uid://bnly1gkbxw6b5" path="res://assets/bubble_pattern.png" id="2_u477r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xoanj"]
+shader = ExtResource("1_3mkmv")
+shader_parameter/pattern_sampler = ExtResource("2_u477r")
+shader_parameter/bg_color = Color(0.14901961, 0.60784316, 1, 1)
+shader_parameter/pattern_color = Color(0.021503761, 0.40035793, 0.8358613, 1)
+shader_parameter/pattern_size = 256.0
 
 [node name="Dialogue" type="Control"]
 layout_mode = 3
@@ -10,23 +18,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_xoanj")
 layout_mode = 1
-offset_right = 400.0
-offset_bottom = 250.0
-texture = ExtResource("1_y1dcc")
-expand_mode = 1
-
-[node name="TextureRect2" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -400.0
-offset_top = -250.0
-grow_horizontal = 0
-grow_vertical = 0
-texture = ExtResource("1_y1dcc")
-expand_mode = 1
+grow_horizontal = 2
+grow_vertical = 2
