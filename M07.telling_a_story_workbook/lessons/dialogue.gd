@@ -5,10 +5,10 @@ extends Control
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 
 var dialogue_items : Array[String] = [
-	"beep",
-	"blorp",
-	"vorp",
 	"merp",
+	"blorbo borp vorp meep beep",
+	"blop gop gobble bop",
+	"beep",
 ]
 
 var current_item_index := 0
@@ -22,8 +22,12 @@ func show_text() -> void:
 	rich_text_label.text = current_item
 	rich_text_label.visible_ratio = 0.0
 	var tween := create_tween()
-	var text_appearing_duration := 0.5
+	var text_appearing_duration := 0.6
 	tween.tween_property(rich_text_label, "visible_ratio", 1.0, text_appearing_duration)
+	var sound_max_offset := audio_stream_player.stream.get_length() - text_appearing_duration
+	var sound_start_position := randf() * sound_max_offset
+	audio_stream_player.play(sound_start_position)
+	tween.finished.connect(audio_stream_player.stop)
 
 func advance() -> void:
 	current_item_index += 1

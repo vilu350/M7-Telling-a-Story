@@ -74,7 +74,7 @@ offset_right = -232.0
 offset_bottom = -544.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "beep"
+text = "merp"
 fit_content = true
 
 [node name="NextButton" type="Button" parent="."]
