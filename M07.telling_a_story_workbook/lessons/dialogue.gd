@@ -14,19 +14,19 @@ var expressions := {
 
 var dialogue_items: Array[Dictionary] = [
 	{
-	"expresion": expressions["regular"],
+	"expression": expressions["regular"],
 	"text": "merp",
 	},
 	{
-	"expresion": expressions["happy"],
+	"expression": expressions["happy"],
 	"text": "blorbo borp vorp meep beep",
 	},
 	{
-	"expresion": expressions["sad"],
+	"expression": expressions["sad"],
 	"text": "blop gop gobble bop",
 	},
 	{
-	"expresion": expressions["regular"],
+	"expression": expressions["regular"],
 	"text": "beep",
 	},
 ]
